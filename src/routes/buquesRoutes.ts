@@ -1,5 +1,9 @@
 import { Router } from "express";
+import { getBuques } from "../controllers/buqueController";
 
 const router = Router()
 
-router.route('/api/buques').get()
+//Buques
+router.route('/api/buques').get(getBuques)
+
+export default router

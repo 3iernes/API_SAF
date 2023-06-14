@@ -4,6 +4,8 @@ const cors = require("cors");
 const morgan = require('morgan');
 let cookieParser = require('cookie-parser')
 
+//Routes
+import buquesRoutes from './routes/buquesRoutes'
 //setting
 let port;
 
@@ -23,5 +25,6 @@ const corsOpc = {
 app.use(cors(corsOpc));
 
 //Routes
+app.use(buquesRoutes)
 
 export default app
