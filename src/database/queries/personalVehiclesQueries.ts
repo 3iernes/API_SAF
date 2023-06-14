@@ -1,0 +1,6 @@
+export const qSelectPeronalVehicles = 'sp_vehiculos_personal_seek'
+export const qSelectPeronalVehicle = 'sp_vehiculos_personal_seek'
+export const qInsertPersonalVehicle = 'sp_vehiculos_personal_am'
+export const qUpdatePersonalVehicle = 'sp_vehiculos_personal_am'
+export const qLinkPVTyre = 'sp_link_vehiculo_vp_cubiertas'
+export const qSelectAsignedPVTyres = 'sp_cubiertas_asignadas_a_pv_seek'

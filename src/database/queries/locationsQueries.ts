@@ -1,0 +1,5 @@
+export const qSelectProvincias = 'SELECT id,nombrecorto FROM provincias'
+export const qSelectLocalidades = 'SELECT id, id_provincia, nombre FROM localidades WHERE id_provincia = @id_provincia'
+export const qSelectPlaces = 'SELECT id, desc_place FROM places WHERE activo = 1'
+export const qInsertPlace = 'sp_places_am'
+export const qUpdatePlace = 'sp_places_am'
