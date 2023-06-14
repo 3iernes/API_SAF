@@ -6,6 +6,7 @@ let cookieParser = require('cookie-parser')
 
 //Routes
 import buquesRoutes from './routes/buquesRoutes'
+import camionesRoutes from './routes/camionesRoutes'
 //setting
 let port;
 
@@ -26,5 +27,5 @@ app.use(cors(corsOpc));
 
 //Routes
 app.use(buquesRoutes)
-
+app.use(camionesRoutes)
 export default app
