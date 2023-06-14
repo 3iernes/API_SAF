@@ -1,6 +1,0 @@
-export const qCreateDriver = 'sp_choferes_abm'
-export const qUpdateDriver = 'sp_choferes_abm'
-export const qSelectDrivers = 'sp_choferes_seek'
-export const qInsertDriverCashMovement = 'sp_cajachica_agregar_movimiento'
-export const qSelectDriverCashMovements = 'sp_caja_chica_chofer'
-export const qSelectCashMovsCats = 'SELECT * FROM movimientos_caja_chica'
