@@ -4,8 +4,8 @@ import { getResumenDespachos, getResumenDespachos2 } from "../controllers/camion
 
 const router = Router()
 
-//Buques
-router.route('/api/camiones/resumen').get(getResumenDespachos)
+//Operativos
+router.route('/api/camiones/resumen1').get(getResumenDespachos)
 router.route('/api/camiones/resumen2').get(getResumenDespachos2)
 
 export default router
