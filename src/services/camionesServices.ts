@@ -1,5 +1,5 @@
 import { getConnection } from "../database/connect";
-import { qSelectResumenDespachos, qSelectResumenDespachos2 } from "../database/queries/camionesQueries";
+import { qSelectResumenDespachos, qSelectResumenDespachos2, qSelectTonsDelSaf } from "../database/queries/camionesQueries";
 
 export const selectResumenDespacho = async()=>{
     const db_pool = await getConnection()
@@ -17,4 +17,12 @@ export const selectResumenDespachos2 = async()=>{
         .input('user',1)
         .execute(qSelectResumenDespachos2)
     return db_response.recordsets
+}
+
+export const updateTnsEnLog = async(ctrl_op_saf:number)=>{
+    const db_pool = await getConnection()
+    const db_response = await db_pool.request()
+        .input('ctrl_op_saf',ctrl_op_saf)
+        .execute(qSelectTonsDelSaf)
+    return db_response.recordset[0]
 }
