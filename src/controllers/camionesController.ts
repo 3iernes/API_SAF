@@ -32,7 +32,8 @@ export const getToneladasDelSaf = async(req: Request, res:Response) => {
         if(db_result.resultado){
             return res.status(200).json({msj:'Ejecutado con exito, revise las toneladas y cantidad de viajes por las dudas.'})
         }else{
-            return res.status(400).json({msj:'Hay equipos que no se corresponden con la info del SAF. Revise los datos.'})
+            return res.status(400).json({msj:`Hay equipos que no se corresponden con la info del SAF o el Operativo no esta cerrado en el SAF. 
+            Revise los datos.`})
         }
     } catch (error) {
         return res.status(500).json({msj:'Algo salio mal.'})
