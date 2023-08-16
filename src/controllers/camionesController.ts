@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
 import { auditError } from "../utils/errorHandler"
-import { selectResumenDespacho, selectResumenDespachos2, updateTnsEnLog } from "../services/camionesServices"
+import { selectDifEqOp, selectResumenDespacho, selectResumenDespachos2, updateTnsEnLog } from "../services/camionesServices"
 
 export const getResumenDespachos = async (req: Request, res:Response) =>{
     try {
@@ -38,6 +38,18 @@ Hay ${db_result.dif_cam_ls} equipos de Logistica que no se corresponden con equi
 Recuerde que la accion solo se aplica con operativos finalizados en el saf.
 Revise los datos.`})
         }
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({msj:'Algo salio mal.'})
+    }
+}
+
+export const getOpEqDif = async(req: Request, res:Response) => {
+    try {
+        const {ctrl_operativo} = req.query
+        if(!ctrl_operativo) return res.status(400).json({msj:'Falta el numero de operativo.'})
+        const diferencia = await selectDifEqOp(+ctrl_operativo)
+        return res.status(200).json(diferencia)
     } catch (error) {
         console.log(error)
         return res.status(500).json({msj:'Algo salio mal.'})
